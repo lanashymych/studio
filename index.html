@@ -162,9 +162,17 @@
     position:relative;overflow:hidden;cursor:pointer;display:block;
     aspect-ratio:9/16;max-width:320px;background:#000;
   }
+  .frame:focus-visible{outline:2px solid #fff;outline-offset:-2px;}
   .frame-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background-size:cover;background-position:center;transition:transform .8s cubic-bezier(.2,.8,.2,1);}
   .frame:hover .frame-thumb{transform:scale(1.05);}
   .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .embed-fallback{
+    position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;
+    align-items:center;justify-content:center;text-align:center;padding:24px;
+    background:#000;color:#fff;
+  }
+  .embed-fallback p{font-size:.85rem;color:rgba(255,255,255,.75);}
+  .embed-fallback a{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;border-bottom:1px solid #fff;padding-bottom:3px;}
   .thumb-1{background:linear-gradient(150deg,#0a0a0a,#4a4a4a 55%,#d4d4d4);}
   .thumb-photo{background-size:cover;background-position:center;}
 
@@ -206,8 +214,7 @@
 
   /* ---------- ABOUT ---------- */
   .proof{padding:130px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .proof-grid{display:grid;grid-template-columns:.85fr 1.3fr 1.1fr;gap:60px;align-items:start;}
-  @media(max-width:1000px){.proof-grid{grid-template-columns:1fr 1fr;gap:56px;}}
+  .proof-grid{display:grid;grid-template-columns:.8fr 1.6fr;gap:70px;align-items:start;}
   @media(max-width:700px){.proof-grid{grid-template-columns:1fr;gap:56px;}}
   .proof-copy h2{font-size:clamp(2rem,3.6vw,2.7rem);font-style:italic;margin-bottom:30px;}
   .proof-copy p{color:var(--charcoal);font-size:1.05rem;line-height:1.75;}
@@ -359,11 +366,11 @@
       </div>
       <div class="pair-grid">
         <div class="pair-item">
-          <a class="frame" href="https://youtube.com/shorts/G_36zPyNT1w" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <div class="frame" data-yt="G_36zPyNT1w" role="button" tabindex="0" aria-label="Play video">
             <img class="frame-thumb" loading="lazy" alt="Portfolio video thumbnail" src="https://img.youtube.com/vi/G_36zPyNT1w/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/G_36zPyNT1w/sddefault.jpg';this.onerror=function(){this.onerror=null;this.src='https://img.youtube.com/vi/G_36zPyNT1w/hqdefault.jpg';}">
-            <div class="frame-overlay"><div class="frame-cat">Luxury Fragrance</div><div class="frame-watch">Watch on YouTube ↗</div></div>
+            <div class="frame-overlay"><div class="frame-cat">Luxury Fragrance</div><div class="frame-watch">Click to Play</div></div>
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
-          </a>
+          </div>
           <div class="frame-caption">
             <div class="plate-no">Plate 01</div>
             <h4>Creed Aventus — Product Showcase</h4>
@@ -372,11 +379,11 @@
           </div>
         </div>
         <div class="pair-item">
-          <a class="frame" href="https://youtube.com/shorts/NtDhRhvGmho" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <div class="frame" data-yt="NtDhRhvGmho" role="button" tabindex="0" aria-label="Play video">
             <img class="frame-thumb" loading="lazy" alt="Portfolio video thumbnail" src="https://img.youtube.com/vi/NtDhRhvGmho/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/NtDhRhvGmho/sddefault.jpg';this.onerror=function(){this.onerror=null;this.src='https://img.youtube.com/vi/NtDhRhvGmho/hqdefault.jpg';}">
-            <div class="frame-overlay"><div class="frame-cat">Premium Footwear</div><div class="frame-watch">Watch on YouTube ↗</div></div>
+            <div class="frame-overlay"><div class="frame-cat">Premium Footwear</div><div class="frame-watch">Click to Play</div></div>
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
-          </a>
+          </div>
           <div class="frame-caption">
             <div class="plate-no">Plate 02</div>
             <h4>"On" Running — Lifestyle Montage</h4>
@@ -395,11 +402,11 @@
       </div>
       <div class="pair-grid">
         <div class="pair-item">
-          <a class="frame" href="https://youtube.com/shorts/vQlrbfk1ZnU" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <div class="frame" data-yt="vQlrbfk1ZnU" role="button" tabindex="0" aria-label="Play video">
             <img class="frame-thumb" loading="lazy" alt="Portfolio video thumbnail" src="https://img.youtube.com/vi/vQlrbfk1ZnU/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/vQlrbfk1ZnU/sddefault.jpg';this.onerror=function(){this.onerror=null;this.src='https://img.youtube.com/vi/vQlrbfk1ZnU/hqdefault.jpg';}">
-            <div class="frame-overlay"><div class="frame-cat">Haircare</div><div class="frame-watch">Watch on YouTube ↗</div></div>
+            <div class="frame-overlay"><div class="frame-cat">Haircare</div><div class="frame-watch">Click to Play</div></div>
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
-          </a>
+          </div>
           <div class="frame-caption">
             <div class="plate-no">Plate 03</div>
             <h4>Moroccanoil — Shampoo Aesthetic &amp; Texture Demo</h4>
@@ -408,11 +415,11 @@
           </div>
         </div>
         <div class="pair-item">
-          <a class="frame" href="https://youtube.com/shorts/feYPFdhrecI" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <div class="frame" data-yt="feYPFdhrecI" role="button" tabindex="0" aria-label="Play video">
             <img class="frame-thumb" loading="lazy" alt="Portfolio video thumbnail" src="https://img.youtube.com/vi/feYPFdhrecI/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/feYPFdhrecI/sddefault.jpg';this.onerror=function(){this.onerror=null;this.src='https://img.youtube.com/vi/feYPFdhrecI/hqdefault.jpg';}">
-            <div class="frame-overlay"><div class="frame-cat">Hair Result</div><div class="frame-watch">Watch on YouTube ↗</div></div>
+            <div class="frame-overlay"><div class="frame-cat">Hair Result</div><div class="frame-watch">Click to Play</div></div>
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
-          </a>
+          </div>
           <div class="frame-caption">
             <div class="plate-no">Plate 04</div>
             <h4>Salon Hair Colour &amp; Cut — Self-Filmed Showcase</h4>
@@ -431,11 +438,11 @@
       </div>
       <div class="pair-grid">
         <div class="pair-item">
-          <a class="frame" href="https://youtube.com/shorts/m9Hopy-9_HE" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <div class="frame" data-yt="m9Hopy-9_HE" role="button" tabindex="0" aria-label="Play video">
             <img class="frame-thumb" loading="lazy" alt="Portfolio video thumbnail" src="https://img.youtube.com/vi/m9Hopy-9_HE/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/m9Hopy-9_HE/sddefault.jpg';this.onerror=function(){this.onerror=null;this.src='https://img.youtube.com/vi/m9Hopy-9_HE/hqdefault.jpg';}">
-            <div class="frame-overlay"><div class="frame-cat">Activewear</div><div class="frame-watch">Watch on YouTube ↗</div></div>
+            <div class="frame-overlay"><div class="frame-cat">Activewear</div><div class="frame-watch">Click to Play</div></div>
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
-          </a>
+          </div>
           <div class="frame-caption">
             <div class="plate-no">Plate 05</div>
             <h4>Tennis Lifestyle — Aesthetic Activewear</h4>
@@ -444,11 +451,11 @@
           </div>
         </div>
         <div class="pair-item">
-          <a class="frame" href="https://youtube.com/shorts/4wqV7LaHd6U" target="_blank" rel="noopener" aria-label="Watch on YouTube">
+          <div class="frame" data-yt="4wqV7LaHd6U" role="button" tabindex="0" aria-label="Play video">
             <img class="frame-thumb" loading="lazy" alt="Portfolio video thumbnail" src="https://img.youtube.com/vi/4wqV7LaHd6U/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/4wqV7LaHd6U/sddefault.jpg';this.onerror=function(){this.onerror=null;this.src='https://img.youtube.com/vi/4wqV7LaHd6U/hqdefault.jpg';}">
-            <div class="frame-overlay"><div class="frame-cat">Food Styling</div><div class="frame-watch">Watch on YouTube ↗</div></div>
+            <div class="frame-overlay"><div class="frame-cat">Food Styling</div><div class="frame-watch">Click to Play</div></div>
             <div class="play-btn"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></div>
-          </a>
+          </div>
           <div class="frame-caption">
             <div class="plate-no">Plate 06</div>
             <h4>Nutella Morning Fuel — Lifestyle Montage</h4>
@@ -478,24 +485,6 @@
         <div class="stat"><b>Worldwide</b><span>Available for collaboration</span></div>
         <div class="stat"><b>Saskatoon</b><span>Based in Canada</span></div>
         <div class="stat"><b>RAW + Edited</b><span>Delivered your way</span></div>
-      </div>
-    </div>
-
-    <div class="testimonials reveal">
-      <div class="testimonial">
-        <span class="mark">"</span>
-        <p>Every single clip Lana sent over felt so good. Nothing felt like filler or just content for the sake of posting. She really took the time to make sure every shot looked gorgeous and made sense for our brand.</p>
-        <div class="testimonial-attr">— Sophia L., Founder, Beauty Salon</div>
-      </div>
-      <div class="testimonial">
-        <span class="mark">"</span>
-        <p>It was so easy working with her. She completely got our aesthetic before we even finished explaining the vibe. She just clicked with our brand style right away.</p>
-        <div class="testimonial-attr">— Marcus T., Creative Director, Wellness &amp; Apparel</div>
-      </div>
-      <div class="testimonial">
-        <span class="mark">"</span>
-        <p>Lana has the kind of eye you just can't teach. You don't even have to write a super detailed brief — she just naturally knows how to capture the light and the textures perfectly.</p>
-        <div class="testimonial-attr">— Elena O., Marketing Lead, Marketing Agency</div>
       </div>
     </div>
   </div>
@@ -599,6 +588,57 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
+
+  // ---- Inline YouTube playback (Player API, with graceful fallback) ----
+  let ytApiReady = false;
+  let ytApiLoading = false;
+  const pendingPlays = [];
+
+  function ensureYouTubeAPI(){
+    if (ytApiReady || ytApiLoading) return;
+    ytApiLoading = true;
+    const tag = document.createElement('script');
+    tag.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(tag);
+  }
+  window.onYouTubeIframeAPIReady = function(){
+    ytApiReady = true;
+    pendingPlays.forEach(fn => fn());
+    pendingPlays.length = 0;
+  };
+
+  function playInline(frame){
+    if (frame.dataset.playing) return;
+    frame.dataset.playing = 'true';
+    const id = frame.getAttribute('data-yt');
+    const containerId = 'yt-player-' + id + '-' + Math.random().toString(36).slice(2, 7);
+    frame.innerHTML = '<div id="' + containerId + '" style="position:absolute;inset:0;"></div>';
+
+    const create = () => {
+      new YT.Player(containerId, {
+        videoId: id,
+        playerVars: { autoplay: 1, playsinline: 1, rel: 0 },
+        events: {
+          onError: function(){
+            frame.innerHTML =
+              '<div class="embed-fallback">' +
+                '<p>This video can\'t play inline here.</p>' +
+                '<a href="https://youtube.com/shorts/' + id + '" target="_blank" rel="noopener">Watch on YouTube →</a>' +
+              '</div>';
+          }
+        }
+      });
+    };
+
+    if (ytApiReady) { create(); } else { pendingPlays.push(create); ensureYouTubeAPI(); }
+  }
+
+  document.querySelectorAll('.frame[data-yt]').forEach(frame => {
+    frame.addEventListener('click', () => playInline(frame));
+    frame.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); playInline(frame); }
+    });
+  });
 </script>
 
 </body>
